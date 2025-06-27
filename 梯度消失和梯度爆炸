@@ -6,3 +6,9 @@
 梯度爆炸 (Exploding Gradients)
   现象: 在反向传播过程中，梯度值变得非常大，甚至趋于无穷大。
   影响: 导致模型参数更新过大，使得训练过程变得非常不稳定，损失函数值剧烈震荡，甚至出现 NaN (Not a Number) 或 inf (Infinity) 值，导致训练崩溃。
+
+解决办法：
+  1.ReLU激活函数
+  2.梯度裁剪
+  3.批归一化（Batch Normalization）
+  4.残差网络
