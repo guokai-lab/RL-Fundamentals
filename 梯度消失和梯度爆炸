@@ -1,4 +1,4 @@
-
+![image](https://github.com/guokai-lab/-/blob/main/image.png)
 梯度消失 (Vanishing Gradients)
   现象: 在反向传播过程中，梯度值变得非常小，甚至接近于零。
   影响: 导致神经网络的浅层（靠近输入层）参数更新缓慢甚至停滞，使得这些层无法有效地学习到特征，从而影响整个网络的学习能力。模型可能无法捕捉到长期的依赖关系。
