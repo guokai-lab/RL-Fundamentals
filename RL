@@ -1,0 +1,3 @@
+强化学习算法：DQN、SARSA、PPO、GRPO、SAC、DDPG、DPO
+激活函数：ReLU、Sigmoid、GeLU、SwiGLU、Tanh、Mish、Softmax
+损失函数：交叉熵、MSE、KL损失、Focal loss、NLL
