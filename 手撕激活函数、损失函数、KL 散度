@@ -9,6 +9,21 @@ def sigmoid(x):
 def tanh(x):
     return (np.exp(x) - np.exp(-x)) / (np.exp(x) + np.exp(-x))
 
+# ReLU
+def ReLU(x):
+    return np.maximum(0, x)
+
+# Leaky ReLU
+def LeakyReLU(x, alpha=0.01):
+    return np.where(x > 0, x, alpha * x)
+
+# Softmax
+def softmax(logits):
+    exp_logits = np.exp(logits - np.max(logits, axis=-1, keepdims=True))
+    sum_exp_logits = np.sum(exp_logits, axis=-1, keepdims=True)
+    softmax_output = exp_logits / sum_exp_logits
+    return softmax_output
+
 # MAE
 def MAE(y_real, y_pred):
     return np.mean(np.abs(y_real - y_pred))
@@ -21,13 +36,6 @@ def MSE(y_real, y_pred):
 def binary_cross_entropy(y_real, y_pred, eps=1e-15):
     y_pred = np.clip(y_pred, eps, 1 - eps)
     return -np.mean(y_real * np.log(y_pred) + (1 - y_real) * np.log(1 - y_pred))
-
-# Softmax
-def softmax(logits):
-    exp_logits = np.exp(logits - np.max(logits, axis=-1, keepdims=True))
-    sum_exp_logits = np.sum(exp_logits, axis=-1, keepdims=True)
-    softmax_output = exp_logits / sum_exp_logits
-    return softmax_output
 
 # KL Divergence
 def kl_div(p, q, esp=1e-15):
